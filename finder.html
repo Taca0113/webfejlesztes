@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Shan Dazhan">
+    <meta name="copyright" content="Teamfight Tactics">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        $(document).ready(function(){
+           $("#myform").validate({
+            rules: {
+                region: " required",
+            },
+            messages: {
+                region: "Select a region",
+            },
+           });
+         });
+        </script>
+    <style>
+        #myTextBox1{
+            color:black;
+            background-color: lightblue;
+        }
+        #myTextBox2{
+            color:black;
+            background-color: lightblue;
+        }
+        #myImage {
+            width: 450px;
+        }
+
+    </style>
+    <title>Teamfight Tactics - Beadandó weboldal</title>
+</head>
+<body>
+    <header>
+        <h1>Teamfight tactics</h1><br>
+        <p class="copyright">Not the official site of Teamfight Tactics<br>
+            © 2023 Riot Games, Inc. Riot Games, Teamfight Tactics, and any associated logos are trademarks, service marks, and/or
+            registered trademarks of Riot Games, Inc.</p>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <script>
+        
+        function calculateResult() {
+            var dropdown1 = document.getElementById("myTextBox1");
+            var dropdown2 = document.getElementById("myTextBox2");
+
+            var value_trait1 = parseInt(dropdown1.value) || 0;
+            var value_trait2 = parseInt(dropdown2.value) || 0;
+
+            var result = (value_trait1 + value_trait2) * 10;
+            setChampionImage(result)
+        }
+        var championMap = {
+            ahri:[25100,10250],
+            akali: [10160, 16100,20100,10200],
+            akali2:[27160, 16270,27200,20270],
+            amumu:[5210,21050],
+            annie:[5250,25050],
+            aphelios:[6230,23060],
+            bard:[9180,18090],
+            blitzcrank:[3240,24030],
+            corki:[1140,14010],
+            ekko:[27250,25270,27240,24270],
+            evelyn:[10170,17100],
+            ezreal:[6140,14060],
+            garen:[1240,24010],
+            gnar:[13260,26130,13220,22130,26220,22260],
+            illaoi:[8150,15080],
+            jax:[4220,22040],
+            jhin:[11140,14110],
+            kaisa:[10140,14100],
+            karthus:[13200,20130],
+            katarina:[2170,17020],
+            kayle:[6190,19060],
+            kayn:[6190,19060],
+            kennen:[27260,26270,27210,21270],
+            ksante:[6240,24060],
+            lillia:[10240,24100,26240,24260],
+            lucian:[9230,23090],
+            lulu:[7250,25070],
+            lux:[4180,18040],
+            missfortune:[9140,14090],
+            mordekaiser:[13240,24130],
+            nami:[1380,18030],
+            neeko:[10210,21100,26210,21260],
+            olaf:[13150,15130],
+            pantheon:[28210,21280],
+            poppy:[5220,22050],
+            qiyana:[27170,17270],
+            riven:[1190,19010],
+            samira:[2200,20020],
+            senna:[27230,23270],
+            sett:[6150,15060],
+            sona:[12250,25120],
+            tahmkench:[2150,15020],
+            taric:[3210,21030],
+            thresh:[2210,21020],
+            twistedfate:[3180,18030],
+            twitch:[28200,20280],
+            urgot:[2220,22020],
+            vex:[5200,20050],
+            vi:[28220,22280],
+            viego:[13190,19130],
+            yasuo:[27190,19270],
+            yone:[6190,19060,6170,17060],
+            yorick:[13220,22130,21220,22210],
+            zac:[4150,15040],
+            zed:[4170,17040],
+            ziggs:[7180,18070],
+        };
+        function setChampionImage(result) {
+            for (var champion in championMap) {
+                if (championMap[champion].includes(result)) {
+                    var myImage = document.getElementById('myImage');
+                    myImage.src = "images/champimage/" + champion + ".png";
+                    break;
+                }
+            }
+        }
+    </script>
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="champions.html" class="active">Champions</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="traits.html">Traits</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="prizedraw.html">Prize draw</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="#">Finder</a></li>
+            </ul>
+        </nav>   
+    </div>
+
+    <p><label>Select your first Trait!
+        <select name="trait1" id="myTextBox1" size="1">
+            <option disabled selected>-</option>
+            <option value="1">EBit</option>
+            <option value="2">Country</option>
+            <option value="3">Disco</option>
+            <option value="4">EDM</option>
+            <option value="5">Emo</option>
+            <option value="6">Hearthsteel</option>
+            <option value="7">Hyperpop</option>
+            <option value="8">Illbeats</option>
+            <option value="9">Jazz</option>
+            <option value="10">KDA</option>
+            <option value="11">Maestro</option>
+            <option value="12">Mixmaster</option>
+            <option value="13">Pentakill</option>
+            <option value="14">Bigshot</option>
+            <option value="15">Bruiser</option>
+            <option value="16">Breakout</option>
+            <option value="17">Crowd Diver</option>
+            <option value="18">Dazzler</option>
+            <option value="19">Edgelord</option>
+            <option value="20">Executioner</option>
+            <option value="21">Guardian</option>
+            <option value="22">Mosher</option>
+            <option value="23">Rapidfire</option>
+            <option value="24">Sentinel</option>
+            <option value="25">Spellweaver</option>
+            <option value="26">Superfan</option>
+            <option value="27">Truedamage</option>
+            <option value="28">Punk</option>
+        </select>
+        </label>
+    </p>
+    <p><label>Select your second Trait!
+        <select name="trait2" id="myTextBox2" size="1">
+            <option disabled selected>-</option>
+            <option value="100">EBit</option>
+            <option value="200">Country</option>
+            <option value="300">Disco</option>
+            <option value="400">EDM</option>
+            <option value="500">Emo</option>
+            <option value="600">Hearthsteel</option>
+            <option value="700">Hyperpop</option>
+            <option value="800">Illbeats</option>
+            <option value="900">Jazz</option>
+            <option value="1000">KDA</option>
+            <option value="1100">Maestro</option>
+            <option value="1200">Mixmaster</option>
+            <option value="1300">Pentakill</option>
+            <option value="1400">Bigshot</option>
+            <option value="1500">Bruiser</option>
+            <option value="1600">Breakout</option>
+            <option value="1700">Crowd Diver</option>
+            <option value="1800">Dazzler</option>
+            <option value="1900">Edgelord</option>
+            <option value="2000">Executioner</option>
+            <option value="2100">Guardian</option>
+            <option value="2200">Mosher</option>
+            <option value="2300">Rapidfire</option>
+            <option value="2400">Sentinel</option>
+            <option value="2500">Spellweaver</option>
+            <option value="2600">Superfan</option>
+            <option value="2700">Truedamage</option>
+            <option value="2800">Punk</option>
+        </select>
+        </label>
+    </p>
+    <button onclick="calculateResult()">Calculate</button>
+    <p id="result"></p>
+    <div class="favicon"><img id="myImage" alt="Champ Image"></div>
+    <footer>
+        For educational purposes only <br>
+        © Shan Dazhan
+    </footer>
+</body>
+</html>
+

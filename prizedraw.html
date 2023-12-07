@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Shan Dazhan">
+    <meta name="copyright" content="Teamfight Tactics">
+    <link rel="stylesheet" href="style.css">
+    <script src="images/validalas/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js" integrity="sha512-WMEKGZ7L5LWgaPeJtw9MBM4i5w5OSBlSjTjCtSnvFJGSVD26gE5+Td12qN5pvWXhuWaWcVwF++F7aqu9cvqP0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+           $("#myform").validate({
+            rules: {
+                playername: "required",
+                email: {
+                    email: true,
+                },
+                region: "required",
+                born: "required",
+                liked: "required",
+                question: "required",
+                accept: {
+                    required: true,
+                },
+            },
+            messages: {
+                playername: " Write your player name",
+                region: "Select a region",
+                email: " Enter a real email address",
+                born: " When were you born",
+                question: " Write a number",
+                liked: "Select how much you like the new season",
+                accept: " Accept our terms!",
+            },
+           });
+         });
+        </script>
+        <style>
+            .hatter{
+                color:black;
+            }
+        </style>
+    <title>Teamfight Tactics - Beadandó weboldal</title>
+</head>
+<body>
+    <header>
+        <h1>Teamfight tactics</h1><br>
+        <p class="copyright">Not the official site of Teamfight Tactics<br>
+            © 2023 Riot Games, Inc. Riot Games, Teamfight Tactics, and any associated logos are trademarks, service marks, and/or
+            registered trademarks of Riot Games, Inc.</p>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><a href="home.html" class="active">Home</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="champions.html">Champions</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="traits.html">Traits</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="#">Prize draw</a></li>
+            </ul>
+        </nav>
+        <nav>
+            <ul>
+                <li><a href="finder.html">Finder</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="hatter">
+        <form action="http://szamtud.uni-corvinus.hu/receive.php" method="post" id="myform">
+            <h2>Register to the Prize draw</h2>
+            <p><label>Player name </label>
+            <input type="text" name="playername"></p>
+            <p><label>Which region are you playing in?
+                <select name="region" size="1">
+                    <option disabled selected>-</option>
+                    <option value="BR">BR</option>
+                    <option value="EUNE">EUNE</option>
+                    <option value="EUW">EUW</option>
+                    <option value="JP">JP</option>
+                    <option value="LAN">LAS</option>
+                    <option value="NA">NA</option>
+                    <option value="OCE">OCE</option>
+                    <option value="PH">PH</option>
+                    <option value="RU">RU</option>
+                    <option value="SG">SG</option>
+                    <option value="TH">TH</option>
+                    <option value="TR">TR</option>
+                    <option value="TW">TW</option>
+                    <option value="VN">VN</option>
+                </select>
+                </label>
+            </p>
+            <p><label for="email">Email</label>
+            <input type="text" name="email" id="email"></p>
+            <p><label for="born">When were you born?</label>
+            <input type="date" name="born" id="born"></p>
+            <p><label for="question">How many years have you been playing for? </label>
+            <input type="number"  name="question" id="question" value="0"></p>
+            <p><label>How do you like the new season?</label></p>
+            <input type="range"  name="liked" min="1" max="10" step="1" value="5">
+            <p><label for="accept">Accept terms</label><br>
+            <input type="checkbox" name="accept" id="accept"></p>
+            <p><input type="submit"  value="Send"></p>
+        </form>
+    </div>
+    <footer>
+        For educational purposes only <br>
+        © Shan Dazhan
+    </footer>
+</body>
+</html>

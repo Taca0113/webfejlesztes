@@ -1,0 +1,162 @@
+/*@font-face {
+    font-family:'Roboto'; 
+    src: url('images/Roboto/Roboto-Black.ttf') format('ttf');
+}
+*/
+
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+    background-color: #3B2D69;
+}
+.container {
+    background-color: royalblue;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+header{ 
+    background-color: #3B2D69;
+    margin: 0;
+}
+h1 { 
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 40pt;
+}
+h2 {
+   
+    text-align: center;
+    font-size: 15pt;
+}
+body{
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+}
+nav ul {
+    margin: 0px;
+    padding-left: 0;
+    text-align: center;
+}
+nav li {
+    flex-direction: row;
+    padding: 15px;
+    list-style-type: none;
+    text-align: center;
+}
+table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;  /* Középre helyezés*/
+	border-collapse:collapse;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+td {
+    vertical-align: top;
+	padding:7px;
+}
+.purple{
+    background-color: #3B2D69;
+}
+a:visited {
+    color: #003366;
+}
+a:active {
+    color: #ffffff;
+    background-color: royalblue;
+}
+form{
+    text-align: center;
+}
+.copyright {
+    text-align: center;
+    font-size: 14pt;
+    margin-top: 0;
+    margin-left: 2%;
+    margin-right: 2%;
+}   
+video {
+    width: 80%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+}
+.p1{
+    
+    font-size: large;
+    font-weight:bold;
+}
+.p2{
+    padding-left: 5%;
+}
+.p3{
+    padding-left: 5%;
+    font-style: italic;
+    
+}
+table li{
+    text-align: left;
+    list-style-type: none;
+    display: flex;
+}
+
+img{
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+.favimg{
+    width: 450px;
+    margin: auto;
+    display: block;
+    justify-content: center;
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    display: flex;
+}
+@media screen and (max-width: 600px) {
+    table img{
+        width: 100px;
+        float: right;
+    }
+    .p2{
+        padding-left: 0%;
+    }
+    .p3{
+        padding-left: 0%;
+        font-style: italic;
+    }
+    nav {
+        flex-basis: 100%;
+        justify-content: center;
+    }
+}    
+
+@media screen and (min-width: 600px) and (max-width: 768px) {
+
+}
+
+@media screen and (min-width: 768px) {
+
+}
